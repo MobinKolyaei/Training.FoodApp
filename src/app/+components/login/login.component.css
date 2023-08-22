@@ -1,0 +1,75 @@
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+}
+#right {
+  box-sizing: border-box;
+  border-left: 5px groove red;
+  float: right;
+  width: 55%;
+  height: 100vh;
+  background-color: aqua;
+  background-image: url("../../../assets/Images/1.jfif");
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+#left {
+  width: 45%;
+  height: 100vh;
+  background-color: rgb(211, 211, 211);
+}
+@media (max-width: 600px) {
+  #right {
+    display: none;
+  }
+  #left {
+    background-image: url("../../../assets/Images/aa.jfif");
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+  }
+  #message2{
+    font-family: persian1;
+    color: red;
+  }
+}
+.example-form {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.example-full-width {
+  width: 85%;
+}
+.error {
+  margin-top: 2%;
+  font-size: 130%;
+  font-family: persian2;
+}
+#message {
+  color: rgb(255, 35, 35);
+  font-size: 350%;
+  font-family: persian1;
+  margin-top: 10%;
+  text-align: center;
+}
+#message2 {
+  font-family: persian2;
+  margin-top: 10%;
+  margin-right: 10%;
+  font-size: 130%;
+}
+.lable {
+  font-family: persian1;
+}
+.but {
+  font-family: persian1;
+  margin-right: 8%;
+  padding: 4% 8%;
+  margin-top: 6%;
+}
+.type {
+  font-family: persian1;
+}

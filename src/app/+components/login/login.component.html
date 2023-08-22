@@ -1,0 +1,61 @@
+<div id="container">
+  <div id="right"></div>
+  <div id="left">
+    <p id="message">خوش آمدید</p>
+    <p id="message2">لطفا وارد حساب خود شوید</p>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label class="lable">نام کاربری</mat-label>
+        <input
+          type="text"
+          matInput
+          [formControl]="username"
+          placeholder="برای مثال :رضا"
+        />
+        <mat-error class="error" *ngIf="username.hasError('required')">
+          لطفا نام کاربری را وارد کنید
+        </mat-error>
+        <mat-error class="error" *ngIf="username.hasError('minlength')">
+          نام کاربری باید حداقل شامل 4 کاراکتر باشد
+        </mat-error>
+      </mat-form-field>
+    </form>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label class="lable">کلمه عبور</mat-label>
+        <input
+          (cut)="DisableCut($event)"
+          (copy)="DisableCopy($event)"
+          (paste)="DisablePaste($event)"
+          type="password"
+          matInput
+          [formControl]="password"
+          placeholder="برای مثال :رضا123"
+        />
+        <mat-error class="error" *ngIf="password.hasError('required')">
+          لطفا کلمه عبور را وارد کنید
+        </mat-error>
+        <mat-error class="error" *ngIf="password.hasError('minlength')">
+          کلمه عبور باید حداقل شامل 8 کاراکتر باشد
+        </mat-error>
+      </mat-form-field>
+    </form>
+    <button
+      (click)="login()"
+      [disabled]="username.invalid || password.invalid"
+      class="but"
+      mat-raised-button
+      color="warn"
+    >
+      ورود
+    </button>
+    <button
+      [routerLink]="'/register'"
+      class="but"
+      mat-raised-button
+      color="primary"
+    >
+      ثبت نام
+    </button>
+  </div>
+</div>
